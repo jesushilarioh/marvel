@@ -27,7 +27,7 @@ function connection() {
   const params = "name=" + name;
 
   xhr.open("GET", "./connections/name-search.php?" + params, true);
-
+  xhr.setRequestHeader("X-Requested-With", "XMLHttpRequest"); 
   xhr.onloadstart = function() {
     document.getElementById("characterSpinnerSection").innerHTML =
     '<strong id="spinnerText" class="text-primary">Loading character...</strong>' +
@@ -124,6 +124,7 @@ function connection() {
 function comics(characterID) {
   const xhr = new XMLHttpRequest();
   xhr.open("GET", './connections/character.php?character-id=' + characterID, true)
+  xhr.setRequestHeader("X-Requested-With", "XMLHttpRequest"); 
   xhr.onloadstart = function () {
     document.getElementById("comicsSpinnerSection").innerHTML =
       '<strong id="spinnerText" class="text-danger">Loading comics below...</strong>' +
@@ -248,7 +249,7 @@ function singleComic() {
   const xhr = new XMLHttpRequest()
 
   xhr.open('GET', "./connections/single-comic.php?comic-id=" + comicID, true)
-
+  xhr.setRequestHeader("X-Requested-With", "XMLHttpRequest"); 
   xhr.onloadstart = function () {
     document.getElementById("comicsSpinnerSection").innerHTML =
       '<strong id="spinnerText" class="text-secondary">Loading comic info...</strong>' +
@@ -367,7 +368,7 @@ function comicCreator() {
   const xhr = new XMLHttpRequest();
 
   xhr.open("GET", "./connections/creator.php?creator-id=" + creatorID, true)
-
+  xhr.setRequestHeader("X-Requested-With", "XMLHttpRequest"); 
   xhr.onloadstart = function () {
     document.getElementById("comicCreatorSpinnerSection").innerHTML =
       '<strong id="spinnerText" class="text-secondary">Loading creator info...</strong>' +
@@ -468,6 +469,7 @@ function creatorSingleComic(comicResourceURI) {
   
   const xhr = new XMLHttpRequest();
   xhr.open("GET", "./connections/single-comic.php?comic-id=" + comicID)
+  xhr.setRequestHeader("X-Requested-With", "XMLHttpRequest"); 
   xhr.onloadstart = function () {
     document.getElementById("comicCreatorSpinnerSection1").innerHTML =
       '<strong id="spinnerText" class="text-secondary">Loading comics...</strong>' +
