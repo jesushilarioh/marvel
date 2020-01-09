@@ -1,4 +1,4 @@
 # marvel
 Created marvel search engine using Marvel API
-# YouTube Video - FULL
+# YouTube full video
 https://youtu.be/_OYW_rQzi3E
